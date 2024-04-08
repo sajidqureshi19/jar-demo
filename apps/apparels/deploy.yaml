@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apparels-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apparels
+  template:
+    metadata:
+      labels:
+        app: apparels
+    spec:
+      containers:
+      - name: apparels
+        image: sajidqureshi/ecommerce:apparels-v2
+        ports:
+        - containerPort: 8080
